@@ -46,17 +46,19 @@ body {
   height: 35px;
 }
 
-.text-box{
-position: absolute;
-top: 40%;
-left: 50%;
-transform: translate(-50%, -50%);
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .heading {
   color: white;
   text-transform: uppercase;
-  
+  margin-bottom: 50px;
+
 }
 
 .heading-main {
@@ -64,6 +66,7 @@ transform: translate(-50%, -50%);
   font-size: 60px;
   font-weight: 400;
   letter-spacing: 35px;
+  animation: moveInLeft 3s ease-out;
 }
 
 .heading-sub {
@@ -71,5 +74,55 @@ transform: translate(-50%, -50%);
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 17.4px;
+  animation: moveInRight 3s ease-out;
+}
 
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  border-radius: 50px;
+  display: inline-block;
+
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+}
+.btn-white {
+  background-color: #fff;
+  color: #777;
 }
