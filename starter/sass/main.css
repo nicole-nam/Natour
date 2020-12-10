@@ -358,13 +358,19 @@ body {
 }
 
 .card {
-  background-color: orange;
-  height: 50rem;
-  -webkit-transition: all .8s ease-in-out;
-  transition: all .8s ease-in-out;
+  -webkit-perspective: 150rem;
+          perspective: 150rem;
+  -moz-perspective: 150rem;
 }
 
-.card:hover {
+.card__side {
+  background-color: orange;
+  height: 50rem;
+  -webkit-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+}
+
+.card:hover .card__side {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
 }
