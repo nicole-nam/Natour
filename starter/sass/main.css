@@ -700,16 +700,15 @@ body {
 
 .form__radio-button::after {
   content: "";
-  display: block;
-  height: 1.3rem;
-  width: 1.3rem;
-  border-radius: 50%;
   position: absolute;
-  background-color: #55c57a;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  display: block;
+  height: 1.3rem;
+  width: 1.3rem;
+  background-color: #55c57a;
   opacity: 0;
   -webkit-transition: opacity .2s;
   transition: opacity .2s;
@@ -717,6 +716,47 @@ body {
 
 .form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
   opacity: 1;
+}
+
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 5000;
+}
+
+.popup__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 75%;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  display: table;
+  overflow: hidden;
+}
+
+.popup__left {
+  width: 33.333333%;
+  display: table-cell;
+}
+
+.popup__right {
+  width: 66.66666667%;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.popup__img {
+  display: block;
+  width: 100%;
 }
 
 .row {
@@ -856,12 +896,12 @@ body {
 }
 
 .navigation__button {
-  background-color: #fff;
-  height: 7rem;
-  width: 7rem;
   position: fixed;
   top: 6rem;
   right: 6rem;
+  background-color: #fff;
+  height: 7rem;
+  width: 7rem;
   border-radius: 50%;
   z-index: 2000;
   -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
@@ -959,8 +999,8 @@ body {
   content: "";
   position: absolute;
   left: 0;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all .5s;
+  transition: all .5s;
 }
 
 .navigation__icon::before {
@@ -977,6 +1017,22 @@ body {
 
 .navigation__button:hover .navigation__icon::after {
   top: 1rem;
+}
+
+.navigation__checkbox:checked ~ .navigation__button .navigation__icon {
+  background-color: transparent;
+}
+
+.navigation__checkbox:checked ~ .navigation__button .navigation__icon::before {
+  top: 0;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.navigation__checkbox:checked ~ .navigation__button .navigation__icon::after {
+  top: 0;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
 }
 
 .section-about {
