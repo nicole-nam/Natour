@@ -726,6 +726,15 @@ body {
   left: 0;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 5000;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.popup:target {
+  opacity: 1;
+  visibility: visible;
 }
 
 .popup__content {
@@ -752,11 +761,26 @@ body {
   width: 66.66666667%;
   display: table-cell;
   vertical-align: middle;
+  padding: 3rem 5rem;
 }
 
 .popup__img {
   display: block;
   width: 100%;
+}
+
+.popup__text {
+  font-size: 1.4rem;
+  margin-bottom: 4rem;
+  -webkit-column-count: 2;
+          column-count: 2;
+  -webkit-column-gap: 4rem;
+          column-gap: 4rem;
+  -webkit-column-rule: 1px solid #eee;
+          column-rule: 1px solid #eee;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
 }
 
 .row {
