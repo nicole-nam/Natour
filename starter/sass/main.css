@@ -1,3 +1,19 @@
+/*
+0-600px: phone
+600-900px: tablet portrait
+900-1200px: tablet landscape
+1200-1800: desktop 
+1800px +: big desktop
+*/
+/* 
+$breakpoint argument choices:
+
+-phone
+-tab-port
+-tab-land
+-big-desktop
+
+*/
 *,
 *::after,
 *::before {
@@ -728,8 +744,8 @@ body {
   z-index: 5000;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 .popup__content {
@@ -746,8 +762,10 @@ body {
   display: table;
   overflow: hidden;
   opacity: 0;
-  -webkit-transform: translate(-50%, -50%) scale(0.5);
-          transform: translate(-50%, -50%) scale(0.5);
+  -webkit-transform: translate(-50%, -50%) scale(0.25);
+          transform: translate(-50%, -50%) scale(0.25);
+  -webkit-transition: all .5s .2s;
+  transition: all .5s .2s;
 }
 
 .popup__left {
